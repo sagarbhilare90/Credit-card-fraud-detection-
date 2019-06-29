@@ -52,18 +52,30 @@ lrc= LogisticRegression(random_state=0)
 lrc.fit(X_train,y_train)
 y_predl= lrc.predict(X_test)
 
+# Fitting Random Forest Classification to the Training set
+from sklearn.ensemble import RandomForestClassifier
+rcl = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)
+rcl.fit(X_train, y_train)
+y_predr= rcl.predict(X_test)
 
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, classification_report, recall_score
-cm = confusion_matrix(y_test, y_pred)
 
-print(cm)
-print("Accuracy"  ,accuracy_score(y_pred,y_test))
-print("precision"  ,precision_score(y_pred,y_test))
-print("recall"  ,recall_score(y_pred,y_test))
+
+print("Svm CM" ,confusion_matrix(y_test, y_pred))
+print("Svm Accuracy"  ,accuracy_score(y_pred,y_test))
+print("Svm precision"  ,precision_score(y_pred,y_test))
+print("Svm recall"  ,recall_score(y_pred,y_test))
 print(classification_report(y_pred,y_test))
 
+print("logistic regression Cm" ,confusion_matrix(y_test, y_predl))
+print("logistic regression Accuracy"  ,accuracy_score(y_predl,y_test))
+print("logistic regression precision"  ,precision_score(y_predl,y_test))
+print("logistic regression recall"  ,recall_score(y_predl,y_test))
+print(classification_report(y_predl,y_test))
 
-
-
-
+print("Random forest Cm" ,confusion_matrix(y_test, y_predr))
+print("Random forest  Accuracy"  ,accuracy_score(y_predr,y_test))
+print("Random forest  precision"  ,precision_score(y_predr,y_test))
+print("Random forest  recall"  ,recall_score(y_predr,y_test))
+print(classification_report(y_predr,y_test))
