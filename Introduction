@@ -1,0 +1,9 @@
+# Credit-card-fraud-detection-
+In modern day bankingit is vbery important for banks to isolate the good customers from bad.
+to do these they implement many costly measures and human resource also this makes the customers unhappy with so much KYC's being done
+this is the reason banks lose valuable customers at the same time they might get prone to give service to defaulters.
+hence some measure has to be taken at the organisational level. so the bank employees people with high skills in analytics and
+prediction to get a very accurate prediction of defaulters.
+ We get this dataset from kaggle this dataset had  the data of credit card holders and they were sorted as defaulters or not defaulters.
+ we need to take this data as input and make a model which can predict the customers based on their performance
+ We used the SVm Classifier as it is the best model so far as it gave accuracy of 84 percent
